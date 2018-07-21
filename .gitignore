@@ -1,0 +1,9 @@
+*.bc
+*.h5
+*.pth
+*.npy
+fastai
+weights
+models
+runs
+tmp
