@@ -19,7 +19,7 @@
 ### 1.5 [3D_SPECT_Classify_PD]()
 
    - Validation set
-     - Accuracy 0.89
+     - Accuracy 0.99
 
 ### 2. [2D,3D_MRI_Classify_PD](https://github.com/macsermkiat/PPMI/blob/master/2D,3D_MRI_Classify_PD.ipynb)
 
