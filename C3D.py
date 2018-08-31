@@ -1,4 +1,5 @@
 import torch.nn as nn
+import math
 class C3D(nn.Module):
     """
     The C3D network as described in [1].
@@ -28,11 +29,15 @@ class C3D(nn.Module):
         self.fc7 = nn.Linear(2048, 512)
         self.fc8 = nn.Linear(512, 2)
 
-        self.dropout = nn.Dropout(p=0.5)
+        self.dropout = nn.Dropout(p=0.8)
 
         self.relu = nn.LeakyReLU(negative_slope=0.1, inplace=False)
         self.softmax = nn.LogSoftmax()
         
+        for m in self.modules():
+            if isinstance(m, nn.Conv3d):
+                n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
+                m.weight.data.normal_(0, math.sqrt(2. / n))
 
     def forward(self, x):
         x = x.unsqueeze(1)
