@@ -16,8 +16,14 @@
 
      - Accuracy 0.9638989169675091
      
+   
+   - 2D-GRU : Accuracy 0.973 (32x32 pixels)
+
+
+
 ### 1.5 [3D_SPECT_Classify_PD]()
 
+   model C3D
    - Validation set
      - Accuracy 0.99
 
